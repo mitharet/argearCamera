@@ -1,2 +1,3 @@
 rootProject.name='ARGEARCAMERA'
 include ':app'
+include ':sbilauncherlibrary'
