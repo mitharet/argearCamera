@@ -66,6 +66,8 @@ import java.util.Set;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import dha.code.sbilauncherlibrary.utilities.FileImageSelector;
+
 
 public class CameraActivity extends AppCompatActivity {
 
@@ -108,6 +110,7 @@ public class CameraActivity extends AppCompatActivity {
 
     private ARGSession mARGSession;
     private ARGMedia mARGMedia;
+    private FileImageSelector mImageSelector;
 
 
     @Override
@@ -349,8 +352,8 @@ public class CameraActivity extends AppCompatActivity {
                 showEfek();
                 break;
             case R.id.efek_button:
-               showStickers();
-               //showEfek();
+                showStickers();
+                //showEfek();
                 break;
 
             case R.id.shutter_button :{

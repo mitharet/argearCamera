@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -73,11 +74,11 @@ public class StickerCategoryListAdapter extends RecyclerView.Adapter<StickerCate
 	}
 
 	public class CategoryViewHolder extends ViewHolder implements View.OnClickListener {
-		Button mButtonCategory = null;
+		ImageButton mButtonCategory = null;
 		CategoryModel mCategory;
 		CategoryViewHolder(View v) {
 			super(v);
-			mButtonCategory = (Button) v.findViewById(R.id.category_button);
+			mButtonCategory = (ImageButton) v.findViewById(R.id.category_button);
 		}
 
 		@Override
@@ -88,7 +89,13 @@ public class StickerCategoryListAdapter extends RecyclerView.Adapter<StickerCate
 			 * Sticker Category 의 제목을 표시합니다.
 			 */
 			Log.d(TAG, "category_sticker " + position + " " + mCategory);
-			mButtonCategory.setText(mCategory.title);
+			if (mCategory.title.equals("Filter")){
+				mButtonCategory.setImageResource(R.drawable.filter_btn_default);
+			} else if (mCategory.title.equals(("Sticker"))){
+				mButtonCategory.setImageResource(R.drawable.sticker_btn_default);
+			}else
+				mButtonCategory.setImageResource(R.drawable.beauty_btn_default);
+//			mButtonCategory.setText(mCategory.title);
 			mButtonCategory.setOnClickListener(this);
 		}
 
